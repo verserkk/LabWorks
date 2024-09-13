@@ -26,8 +26,6 @@ int main()
         cout << "Enter your choice: ";
         cin >> choice;
 
-       
-        
         if (choice==0)
             return 0;
 
@@ -42,7 +40,7 @@ int main()
             library->setName(name);
             catalog.addLibrary(library);
             cout << "Library \"" << name << "\" added." << endl;
-            break;
+
         }
         if (choice==2)
         {
@@ -51,8 +49,8 @@ int main()
             string libName;
             getline(cin, libName);
 
-            auto library = catalog.findLibraryByName(libName);
-            if (library)
+            
+            if (auto library = catalog.findLibraryByName(libName); library)
             {
                 cout << "Enter book details:" << endl;
                 auto book = make_shared<printedProduct>(0, 0, "", "");
@@ -64,7 +62,7 @@ int main()
             {
                 cout << "Library not found." << endl;
             }
-            break;
+           
         }
         if (choice==3)
         {
@@ -73,7 +71,6 @@ int main()
             string bookTitle;
             getline(cin, bookTitle);
             catalog.findBookByName(bookTitle);
-            break;
         }
         if (choice==4)
         {
@@ -83,12 +80,12 @@ int main()
             getline(cin, bookTitle);
             catalog.deleteBookFromAllLibraries(bookTitle);
             cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from all libraries." << endl;
-            break;
+      
         }
         if (choice==5)
         {
             catalog.printAllLibrarys();
-            break;
+    
         }
         if (choice==6)
         {
@@ -97,7 +94,7 @@ int main()
             string libName;
             getline(cin, libName);
             catalog.printFullLibraryInfo(libName);
-            break;
+         
         }
         if (choice==7)
         {
@@ -107,7 +104,7 @@ int main()
             getline(cin, libName);
             catalog.deleteLibraryByName(libName);
             cout << "Library \"" << libName << "\" has been deleted." << endl;
-            break;
+         
         }
         if (choice==8)
         {
@@ -116,8 +113,8 @@ int main()
             string libName;
             getline(cin, libName);
 
-            auto library = catalog.findLibraryByName(libName);
-            if (library)
+            
+            if (auto library = catalog.findLibraryByName(libName); library)
             {
                 cout << "Enter book title to find: ";
                 string bookTitle;
@@ -140,7 +137,7 @@ int main()
             {
                 cout << "Library not found." << endl;
             }
-            break;
+         
         }
         if (choice==9)
         {
@@ -162,7 +159,7 @@ int main()
             {
                 cout << "Library not found." << endl;
             }
-            break;
+    
         }
         if (choice>9 || choice<0)
             cout << "Invalid choice. Please enter a number between 0 and 9." << endl;
