@@ -42,6 +42,4 @@
 - `LibrarySystem.h` и `LibrarySystem.cpp`
 - `Lab1.cpp`
 
-## Ссылка на Sonar
-
-https://sonarcloud.io/project/overview?id=verserkk_LabWorks
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=verserkk_LabWorks)](https://sonarcloud.io/summary/new_code?id=verserkk_LabWorks)
