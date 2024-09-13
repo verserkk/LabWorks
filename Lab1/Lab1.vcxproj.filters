@@ -18,16 +18,31 @@
     <ClCompile Include="Lab1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Library.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PrintedProduct.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Catalog.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
     <ClCompile Include="LibrarySystem.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Library.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrintedProduct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Catalog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="LibrarySystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

@@ -128,14 +128,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Lab1.cpp" />
+    <ClCompile Include="PrintedProduct.cpp" />
+    <ClCompile Include="Catalog.cpp" />
     <ClCompile Include="LibrarySystem.cpp" />
+    <ClCompile Include="Lab1.cpp" />
+    <ClCompile Include="Library.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="PrintedProduct.h" />
+    <ClInclude Include="Catalog.h" />
     <ClInclude Include="LibrarySystem.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <ClInclude Include="Library.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

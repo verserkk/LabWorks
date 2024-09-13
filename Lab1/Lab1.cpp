@@ -1,7 +1,10 @@
+#include "PrintedProduct.h"
+#include "Library.h"
+#include "Catalog.h"
 #include "LibrarySystem.h"
+
 #include <iostream>
 #include <memory>
-#include <string>
 
 using namespace std;
 
