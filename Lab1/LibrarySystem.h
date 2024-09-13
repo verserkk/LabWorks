@@ -70,5 +70,5 @@ public:
     void deleteBookFromAllLibraries(const std::string& bookTitle) const;
     void deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle) const;
 };
-
+void displayMenu();
 #endif // LIBRARYSYSTEM_H

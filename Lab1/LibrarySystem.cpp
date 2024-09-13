@@ -38,7 +38,6 @@ void printedProduct::print() const
 void printedProduct::createBook()
 {
     cout << "Enter title: ";
-    cin.ignore(); 
     getline(cin, title);
     cout << "Enter author name: ";
     getline(cin, nameOfAuthor);
@@ -223,4 +222,19 @@ void Catalog::deleteBookFromLibrary(const std::string& libName, const std::strin
     {
         library->deleteBookByTitle(bookTitle);
     }
+}
+void displayMenu()
+{
+    std::cout << "Menu:\n"
+        << "1. Add Library\n"
+        << "2. Add Book to Library\n"
+        << "3. Find Book by Title\n"
+        << "4. Delete Book by Title from All Libraries\n"
+        << "5. Print All Libraries\n"
+        << "6. Print Full Library Info\n"
+        << "7. Delete Library by Name\n"
+        << "8. Find Book in Specific Library\n"
+        << "9. Delete Book from Specific Library\n"
+        << "0. Exit\n";
+    std::cout << "Enter your choice: ";
 }
