@@ -137,7 +137,7 @@ void Catalog::addLibrary(std::shared_ptr<Library> Lib)
 
 int Catalog::getNumOfLibrarys() const { return numOfLibrarys; }
 
-std::shared_ptr<Library> Catalog::findLibraryByName(const std::string& name) const
+std::shared_ptr<Library> Catalog::findLibraryByName(std::string_view name) const
 {
     for (const auto& library : Librarys)
     {
@@ -149,7 +149,7 @@ std::shared_ptr<Library> Catalog::findLibraryByName(const std::string& name) con
     return nullptr;
 }
 
-void Catalog::deleteLibraryByName(const std::string& name)
+void Catalog::deleteLibraryByName(std::string_view name)
 {
     for (auto it = Librarys.begin(); it != Librarys.end(); ++it)
     {
@@ -172,8 +172,8 @@ void Catalog::printAllLibrarys() const
 
 void Catalog::printFullLibraryInfo(const std::string& name) const
 {
-    auto library = findLibraryByName(name);
-    if (library)
+    
+    if (auto library = findLibraryByName(name); library)
     {
         library->printLibInfo();
         library->printAllBooks();
@@ -208,7 +208,7 @@ void Catalog::findBookByName(const std::string& name) const
     }
 }
 
-void Catalog::deleteBookFromAllLibraries(const std::string& bookTitle)
+void Catalog::deleteBookFromAllLibraries(const std::string& bookTitle) const
 {
     for (const auto& library : Librarys)
     {
@@ -216,10 +216,10 @@ void Catalog::deleteBookFromAllLibraries(const std::string& bookTitle)
     }
 }
 
-void Catalog::deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle)
+void Catalog::deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle) const
 {
-    auto library = findLibraryByName(libName);
-    if (library)
+    
+    if (auto library = findLibraryByName(libName); library)
     {
         library->deleteBookByTitle(bookTitle);
     }

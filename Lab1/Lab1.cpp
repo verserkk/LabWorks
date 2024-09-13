@@ -26,12 +26,12 @@ int main()
         cout << "Enter your choice: ";
         cin >> choice;
 
-        switch (choice)
-        {
-        case 0:
+       
+        
+        if (choice==0)
             return 0;
 
-        case 1: 
+        if (choice==1)
         {
             cin.ignore(); 
             cout << "Enter library name: ";
@@ -44,7 +44,7 @@ int main()
             cout << "Library \"" << name << "\" added." << endl;
             break;
         }
-        case 2: 
+        if (choice==2)
         {
             cin.ignore(); 
             cout << "Enter library name: ";
@@ -66,7 +66,7 @@ int main()
             }
             break;
         }
-        case 3: 
+        if (choice==3)
         {
             cin.ignore(); 
             cout << "Enter book title to find: ";
@@ -75,7 +75,7 @@ int main()
             catalog.findBookByName(bookTitle);
             break;
         }
-        case 4: 
+        if (choice==4)
         {
             cin.ignore(); 
             cout << "Enter book title to delete: ";
@@ -85,12 +85,12 @@ int main()
             cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from all libraries." << endl;
             break;
         }
-        case 5: 
+        if (choice==5)
         {
             catalog.printAllLibrarys();
             break;
         }
-        case 6: 
+        if (choice==6)
         {
             cin.ignore(); 
             cout << "Enter library name to view details: ";
@@ -99,7 +99,7 @@ int main()
             catalog.printFullLibraryInfo(libName);
             break;
         }
-        case 7: 
+        if (choice==7)
         {
             cin.ignore(); 
             cout << "Enter library name to delete: ";
@@ -109,7 +109,7 @@ int main()
             cout << "Library \"" << libName << "\" has been deleted." << endl;
             break;
         }
-        case 8: 
+        if (choice==8)
         {
             cin.ignore(); 
             cout << "Enter library name: ";
@@ -142,15 +142,15 @@ int main()
             }
             break;
         }
-        case 9: 
+        if (choice==9)
         {
             cin.ignore(); 
             cout << "Enter library name: ";
             string libName;
             getline(cin, libName);
 
-            auto library = catalog.findLibraryByName(libName);
-            if (library)
+            
+            if (auto library = catalog.findLibraryByName(libName); library)
             {
                 cout << "Enter book title to delete: ";
                 string bookTitle;
@@ -164,10 +164,10 @@ int main()
             }
             break;
         }
-        default:
+        if (choice>9 || choice<0)
             cout << "Invalid choice. Please enter a number between 0 and 9." << endl;
-        }
+        
     }
 
-    return 0;
+
 }

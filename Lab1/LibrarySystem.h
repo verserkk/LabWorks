@@ -62,13 +62,13 @@ private:
 public:
     void addLibrary(std::shared_ptr<Library> Lib);
     int getNumOfLibrarys() const;
-    std::shared_ptr<Library> findLibraryByName(const std::string& name) const;
-    void deleteLibraryByName(const std::string& name);
+    std::shared_ptr<Library> findLibraryByName(std::string_view name) const;
+    void deleteLibraryByName(std::string_view name);
     void printAllLibrarys() const;
     void printFullLibraryInfo(const std::string& name) const;
     void findBookByName(const std::string& name) const;
-    void deleteBookFromAllLibraries(const std::string& bookTitle);
-    void deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle);
+    void deleteBookFromAllLibraries(const std::string& bookTitle) const;
+    void deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle) const;
 };
 
 #endif // LIBRARYSYSTEM_H
