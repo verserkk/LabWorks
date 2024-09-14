@@ -40,6 +40,9 @@
 Проект разделен на следующие файлы:
 
 - `LibrarySystem.h` и `LibrarySystem.cpp`
-- `Lab1.cpp`
+- `Library.h` и `Library.cpp`
+- `Catalog.h` и `Catalog.cpp`
+- `PrintedProduct.h` и `PrintedProduct.cpp`
+- `main.cpp`
 
 [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=verserkk_LabWorks)](https://sonarcloud.io/summary/new_code?id=verserkk_LabWorks)
