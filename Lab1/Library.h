@@ -27,4 +27,4 @@ public:
     void printLibInfo() const;
 };
 
-#endif // LIBRARY_H
+#endif

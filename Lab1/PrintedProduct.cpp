@@ -43,6 +43,6 @@ void printedProduct::createBook()
     cin >> numberOfPages;
     cout << "Enter cost: ";
     cin >> cost;
-    cin.ignore(); // To consume the newline character left in the buffer
+    cin.ignore(); 
     availability = true;
 }

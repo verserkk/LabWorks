@@ -24,4 +24,4 @@ public:
     void deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle) const;
 };
 
-#endif // CATALOG_H
+#endif 
