@@ -40,11 +40,11 @@ void Library::sortBooksByNumberOfPages()
 
 void Library::deleteBookByTitle(std::string_view title)
 {
-    auto newEnd = std::ranges::remove_if(Books.begin(), Books.end(), [&](const shared_ptr<printedProduct>& book) {
+    auto newEnd = remove_if(Books.begin(), Books.end(), [&](const shared_ptr<printedProduct>& book) {
         return book->getTitle() == title;
         });
 
-    Books.erase(newEnd.begin(), Books.end());
+    Books.erase(newEnd, Books.end());
     numberOfBooks = Books.size();
 }
 
