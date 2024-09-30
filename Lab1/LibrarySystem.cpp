@@ -115,6 +115,23 @@ void handleDeleteBookFromLibrary(const Catalog& catalog) {
     }
 }
 
+void handleSortByCost(Catalog& catalog) {
+    cin.ignore();
+    cout << "Enter library name to sort books by cost: ";
+    string libName;
+    getline(cin, libName);
+    catalog.sortBooksInLibraryByCost(libName);
+}
+
+void handleSortByNumberOfPages(Catalog& catalog) {
+    cin.ignore();
+    cout << "Enter library name to sort books by number of pages: ";
+    string libName;
+    getline(cin, libName);
+    catalog.sortBooksInLibraryByNumberOfPages(libName);
+}
+
+
 void displayMenu()
 {
     std::cout << "Menu:\n"
@@ -127,6 +144,8 @@ void displayMenu()
         << "7. Delete Library by Name\n"
         << "8. Find Book in Specific Library\n"
         << "9. Delete Book from Specific Library\n"
+        << "10. Sort Books in a specific library by cost\n"
+        << "11. Sort Books in a specific library by number of pages\n"
         << "0. Exit\n";
     std::cout << "Enter your choice: ";
 }

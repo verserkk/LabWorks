@@ -28,6 +28,8 @@ int main() {
         case 7: handleDeleteLibrary(catalog); break;
         case 8: handleFindBooksInLibrary(catalog); break;
         case 9: handleDeleteBookFromLibrary(catalog); break;
+        case 10: handleSortByCost(catalog); break;
+        case 11: handleSortByNumberOfPages(catalog); break;
         default: cout << "Invalid choice. Please enter a number between 0 and 9." << endl; break;
         }
     }

@@ -92,3 +92,23 @@ void Catalog::deleteBookFromLibrary(const std::string& libName, const std::strin
         library->deleteBookByTitle(bookTitle);
     }
 }
+
+void Catalog::sortBooksInLibraryByCost(const std::string& libName) {
+    if (auto library = findLibraryByName(libName); library) {
+        library->sortBooksByCost();
+        cout << "Books in library \"" << libName << "\" sorted by cost." << endl;
+    }
+    else {
+        cout << "Library with name \"" << libName << "\" not found." << endl;
+    }
+}
+
+void Catalog::sortBooksInLibraryByNumberOfPages(const std::string& libName) {
+    if (auto library = findLibraryByName(libName); library) {
+        library->sortBooksByNumberOfPages();
+        cout << "Books in library \"" << libName << "\" sorted by number of pages." << endl;
+    }
+    else {
+        cout << "Library with name \"" << libName << "\" not found." << endl;
+    }
+}
