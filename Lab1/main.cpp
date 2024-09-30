@@ -20,7 +20,7 @@ void handleAddLibrary(Catalog& catalog) {
     cout << "Library \"" << name << "\" added." << endl;
 }
 
-void handleAddBook(Catalog& catalog) {
+void handleAddBook(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name: ";
     string libName;
@@ -38,7 +38,7 @@ void handleAddBook(Catalog& catalog) {
     }
 }
 
-void handleFindBook(Catalog& catalog) {
+void handleFindBook(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter book title to find: ";
     string bookTitle;
@@ -46,7 +46,7 @@ void handleFindBook(Catalog& catalog) {
     catalog.findBookByName(bookTitle);
 }
 
-void handleDeleteBookFromAllLibraries(Catalog& catalog) {
+void handleDeleteBookFromAllLibraries(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter book title to delete: ";
     string bookTitle;
@@ -55,11 +55,11 @@ void handleDeleteBookFromAllLibraries(Catalog& catalog) {
     cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from all libraries." << endl;
 }
 
-void handlePrintAllLibraries(Catalog& catalog) {
+void handlePrintAllLibraries(const Catalog& catalog) {
     catalog.printAllLibrarys();
 }
 
-void handleLibraryDetails(Catalog& catalog) {
+void handleLibraryDetails(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name to view details: ";
     string libName;
@@ -76,7 +76,7 @@ void handleDeleteLibrary(Catalog& catalog) {
     cout << "Library \"" << libName << "\" has been deleted." << endl;
 }
 
-void handleFindBooksInLibrary(Catalog& catalog) {
+void handleFindBooksInLibrary(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name: ";
     string libName;
@@ -102,7 +102,7 @@ void handleFindBooksInLibrary(Catalog& catalog) {
     }
 }
 
-void handleDeleteBookFromLibrary(Catalog& catalog) {
+void handleDeleteBookFromLibrary(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name: ";
     string libName;
