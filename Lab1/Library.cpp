@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Library::addBook(std::shared_ptr<printedProduct> Book)
+void Library::addBook(std::shared_ptr<PrintedProduct> Book)
 {
     Books.push_back(Book);
     numberOfBooks++;
@@ -26,21 +26,21 @@ void Library::takeBook(int i)
 
 void Library::sortBooksByCost()
 {
-    ranges::sort(Books, [](const shared_ptr<printedProduct>& a, const shared_ptr<printedProduct>& b) {
+    ranges::sort(Books, [](const shared_ptr<PrintedProduct>& a, const shared_ptr<PrintedProduct>& b) {
         return a->getCost() > b->getCost();
         });
 }
 
 void Library::sortBooksByNumberOfPages()
 {
-    ranges::sort(Books, [](const shared_ptr<printedProduct>& a, const shared_ptr<printedProduct>& b) {
+    ranges::sort(Books, [](const shared_ptr<PrintedProduct>& a, const shared_ptr<PrintedProduct>& b) {
         return a->getNumberOfPages() > b->getNumberOfPages();
         });
 }
 
 void Library::deleteBookByTitle(std::string_view title)
 {
-    auto newEnd = std::ranges::remove_if(Books, [&](const shared_ptr<printedProduct>& book) {
+    auto newEnd = std::ranges::remove_if(Books, [&](const shared_ptr<PrintedProduct>& book) {
         return book->getTitle() == title;
         });
 
@@ -48,9 +48,9 @@ void Library::deleteBookByTitle(std::string_view title)
     numberOfBooks = Books.size();
 }
 
-std::vector<std::shared_ptr<printedProduct>> Library::findBooksByTitle(std::string_view title) const
+std::vector<std::shared_ptr<PrintedProduct>> Library::findBooksByTitle(std::string_view title) const
 {
-    std::vector<std::shared_ptr<printedProduct>> result;
+    std::vector<std::shared_ptr<PrintedProduct>> result;
     for (const auto& book : Books)
     {
         if (book->getTitle() == title)

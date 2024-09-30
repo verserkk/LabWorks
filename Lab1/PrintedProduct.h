@@ -5,7 +5,7 @@
 #include <string>
 #include <string_view>
 
-class printedProduct
+class PrintedProduct
 {
 private:
     int cost;
@@ -15,7 +15,7 @@ private:
     bool availability = true;
 
 public:
-    printedProduct(int costIn, int numberOfPagesIn, std::string_view titleIn, std::string_view nameOfAuthorIn);
+    PrintedProduct(int costIn, int numberOfPagesIn, std::string_view titleIn, std::string_view nameOfAuthorIn);
 
     void setNumberOfPages(int numberOfPagesIn);
     void setCost(int costIn);

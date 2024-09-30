@@ -3,22 +3,22 @@
 
 using namespace std;
 
-printedProduct::printedProduct(int costIn, int numberOfPagesIn, std::string_view titleIn, std::string_view nameOfAuthorIn)
+PrintedProduct::PrintedProduct(int costIn, int numberOfPagesIn, std::string_view titleIn, std::string_view nameOfAuthorIn)
     : cost(costIn), numberOfPages(numberOfPagesIn), title(titleIn), nameOfAuthor(nameOfAuthorIn) {}
 
-void printedProduct::setNumberOfPages(int numberOfPagesIn) { numberOfPages = numberOfPagesIn; }
-void printedProduct::setCost(int costIn) { cost = costIn; }
-void printedProduct::setTitle(std::string_view titleIn) { title = titleIn; }
-void printedProduct::setNameOfAuthor(std::string_view nameOfAuthorIn) { nameOfAuthor = nameOfAuthorIn; }
-void printedProduct::setAvailability(bool availabilityIn) { availability = availabilityIn; }
+void PrintedProduct::setNumberOfPages(int numberOfPagesIn) { numberOfPages = numberOfPagesIn; }
+void PrintedProduct::setCost(int costIn) { cost = costIn; }
+void PrintedProduct::setTitle(std::string_view titleIn) { title = titleIn; }
+void PrintedProduct::setNameOfAuthor(std::string_view nameOfAuthorIn) { nameOfAuthor = nameOfAuthorIn; }
+void PrintedProduct::setAvailability(bool availabilityIn) { availability = availabilityIn; }
 
-int printedProduct::getCost() const { return cost; }
-int printedProduct::getNumberOfPages() const { return numberOfPages; }
-std::string printedProduct::getTitle() const { return title; }
-std::string printedProduct::getNameOfAuthor() const { return nameOfAuthor; }
-bool printedProduct::getAvailability() const { return availability; }
+int PrintedProduct::getCost() const { return cost; }
+int PrintedProduct::getNumberOfPages() const { return numberOfPages; }
+std::string PrintedProduct::getTitle() const { return title; }
+std::string PrintedProduct::getNameOfAuthor() const { return nameOfAuthor; }
+bool PrintedProduct::getAvailability() const { return availability; }
 
-void printedProduct::print() const
+void PrintedProduct::print() const
 {
     cout << title << " by " << nameOfAuthor << endl
         << "Number of pages: " << numberOfPages << endl
@@ -33,7 +33,7 @@ void printedProduct::print() const
     }
 }
 
-void printedProduct::createBook()
+void PrintedProduct::createBook()
 {
     cout << "Enter title: ";
     getline(cin, title);

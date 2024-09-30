@@ -23,7 +23,7 @@ void handleAddBook(const Catalog& catalog) {
 
     if (auto library = catalog.findLibraryByName(libName); library) {
         cout << "Enter book details:" << endl;
-        auto book = make_shared<printedProduct>(0, 0, "", "");
+        auto book = make_shared<PrintedProduct>(0, 0, "", "");
         book->createBook();
         library->addBook(book);
         cout << "Book added to library \"" << libName << "\"." << endl;
