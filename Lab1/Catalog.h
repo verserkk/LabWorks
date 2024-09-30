@@ -25,8 +25,8 @@ public:
     void findBookByName(const std::string& name) const;
     void deleteBookFromAllLibraries(const std::string& bookTitle) const;
     void deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle) const;
-    void sortBooksInLibraryByCost(const std::string& name);
-    void sortBooksInLibraryByNumberOfPages(const std::string& name);
+    void sortBooksInLibraryByCost(const std::string& name) const;
+    void sortBooksInLibraryByNumberOfPages(const std::string& name) const;
 };
 
 #endif 

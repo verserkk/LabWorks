@@ -93,7 +93,7 @@ void Catalog::deleteBookFromLibrary(const std::string& libName, const std::strin
     }
 }
 
-void Catalog::sortBooksInLibraryByCost(const std::string& libName) {
+void Catalog::sortBooksInLibraryByCost(const std::string& libName) const {
     if (auto library = findLibraryByName(libName); library) {
         library->sortBooksByCost();
         cout << "Books in library \"" << libName << "\" sorted by cost." << endl;
@@ -103,7 +103,7 @@ void Catalog::sortBooksInLibraryByCost(const std::string& libName) {
     }
 }
 
-void Catalog::sortBooksInLibraryByNumberOfPages(const std::string& libName) {
+void Catalog::sortBooksInLibraryByNumberOfPages(const std::string& libName) const {
     if (auto library = findLibraryByName(libName); library) {
         library->sortBooksByNumberOfPages();
         cout << "Books in library \"" << libName << "\" sorted by number of pages." << endl;
