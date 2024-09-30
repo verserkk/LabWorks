@@ -16,8 +16,8 @@ void handleLibraryDetails(const Catalog& catalog);
 void handleDeleteLibrary(Catalog& catalog);
 void handleFindBooksInLibrary(const Catalog& catalog);
 void handleDeleteBookFromLibrary(const Catalog& catalog);
-void handleSortByCost(Catalog& catalog);
-void handleSortByNumberOfPages( Catalog& catalog);
+void handleSortByCost(const Catalog& catalog);
+void handleSortByNumberOfPages(const Catalog& catalog);
 void displayMenu();
 
 #endif 

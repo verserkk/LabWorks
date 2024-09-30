@@ -115,7 +115,7 @@ void handleDeleteBookFromLibrary(const Catalog& catalog) {
     }
 }
 
-void handleSortByCost(Catalog& catalog) {
+void handleSortByCost(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name to sort books by cost: ";
     string libName;
@@ -123,7 +123,7 @@ void handleSortByCost(Catalog& catalog) {
     catalog.sortBooksInLibraryByCost(libName);
 }
 
-void handleSortByNumberOfPages(Catalog& catalog) {
+void handleSortByNumberOfPages(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name to sort books by number of pages: ";
     string libName;
