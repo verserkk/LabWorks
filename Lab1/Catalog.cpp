@@ -1,5 +1,5 @@
 #include "Catalog.h"
-#include <iostream>
+
 
 using namespace std;
 
@@ -23,16 +23,13 @@ std::shared_ptr<Library> Catalog::findLibraryByName(std::string_view name) const
     return nullptr;
 }
 
-void Catalog::deleteLibraryByName(std::string_view name)
+void Catalog::deleteLibraryByName(string_view name)
 {
-    auto it = remove_if(Librarys.begin(), Librarys.end(), [&](const shared_ptr<Library>& library) {
+    auto newEnd = std::ranges::remove_if(Librarys, [&](const std::shared_ptr<Library>& library) {
         return library->getName() == name;
         });
-
-    if (it != Librarys.end()) {
-        Librarys.erase(it, Librarys.end());
-        --numOfLibrarys;
-    }
+    Librarys.erase(newEnd.begin(), Librarys.end());
+    numOfLibrarys = Librarys.size();
 }
 
 void Catalog::printAllLibrarys() const

@@ -1,6 +1,5 @@
 #include "Library.h"
-#include <algorithm>
-#include <ranges>
+
 
 using namespace std;
 
@@ -41,14 +40,12 @@ void Library::sortBooksByNumberOfPages()
 
 void Library::deleteBookByTitle(std::string_view title)
 {
-    auto it = remove_if(Books.begin(), Books.end(), [&](const shared_ptr<printedProduct>& book) {
+    auto newEnd = ranges::remove_if(Books.begin(), Books.end(), [&](const shared_ptr<printedProduct>& book) {
         return book->getTitle() == title;
         });
 
-    if (it != Books.end()) {
-        Books.erase(it, Books.end());
-        numberOfBooks--;
-    }
+    Books.erase(newEnd.begin(), Books.end());
+    numberOfBooks = Books.size();
 }
 
 std::vector<std::shared_ptr<printedProduct>> Library::findBooksByTitle(std::string_view title) const

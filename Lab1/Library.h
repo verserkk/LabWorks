@@ -4,6 +4,8 @@
 #include <vector>
 #include <memory>
 #include <string>
+#include <algorithm>
+#include <ranges>
 #include "PrintedProduct.h"
 
 class Library

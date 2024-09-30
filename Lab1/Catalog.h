@@ -4,6 +4,9 @@
 #include <vector>
 #include <memory>
 #include <string>
+#include <ranges>
+#include <algorithm>
+#include <iostream>
 #include "Library.h"
 
 class Catalog
