@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void handleAddLibrary(Catalog& catalog) {
+void AddLibrary(Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name: ";
     string name;
@@ -15,7 +15,7 @@ void handleAddLibrary(Catalog& catalog) {
     cout << "Library \"" << name << "\" added." << endl;
 }
 
-void handleAddBook(const Catalog& catalog) {
+void AddBook(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name: ";
     string libName;
@@ -33,7 +33,7 @@ void handleAddBook(const Catalog& catalog) {
     }
 }
 
-void handleFindBook(const Catalog& catalog) {
+void FindBook(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter book title to find: ";
     string bookTitle;
@@ -41,7 +41,7 @@ void handleFindBook(const Catalog& catalog) {
     catalog.findBookByName(bookTitle);
 }
 
-void handleDeleteBookFromAllLibraries(const Catalog& catalog) {
+void DeleteBookFromAllLibraries(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter book title to delete: ";
     string bookTitle;
@@ -50,11 +50,11 @@ void handleDeleteBookFromAllLibraries(const Catalog& catalog) {
     cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from all libraries." << endl;
 }
 
-void handlePrintAllLibraries(const Catalog& catalog) {
+void PrintAllLibraries(const Catalog& catalog) {
     catalog.printAllLibrarys();
 }
 
-void handleLibraryDetails(const Catalog& catalog) {
+void LibraryDetails(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name to view details: ";
     string libName;
@@ -62,7 +62,7 @@ void handleLibraryDetails(const Catalog& catalog) {
     catalog.printFullLibraryInfo(libName);
 }
 
-void handleDeleteLibrary(Catalog& catalog) {
+void DeleteLibrary(Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name to delete: ";
     string libName;
@@ -71,7 +71,7 @@ void handleDeleteLibrary(Catalog& catalog) {
     cout << "Library \"" << libName << "\" has been deleted." << endl;
 }
 
-void handleFindBooksInLibrary(const Catalog& catalog) {
+void FindBooksInLibrary(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name: ";
     string libName;
@@ -97,7 +97,7 @@ void handleFindBooksInLibrary(const Catalog& catalog) {
     }
 }
 
-void handleDeleteBookFromLibrary(const Catalog& catalog) {
+void DeleteBookFromLibrary(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name: ";
     string libName;
@@ -115,7 +115,7 @@ void handleDeleteBookFromLibrary(const Catalog& catalog) {
     }
 }
 
-void handleSortByCost(const Catalog& catalog) {
+void SortByCost(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name to sort books by cost: ";
     string libName;
@@ -123,7 +123,7 @@ void handleSortByCost(const Catalog& catalog) {
     catalog.sortBooksInLibraryByCost(libName);
 }
 
-void handleSortByNumberOfPages(const Catalog& catalog) {
+void SortByNumberOfPages(const Catalog& catalog) {
     cin.ignore();
     cout << "Enter library name to sort books by number of pages: ";
     string libName;

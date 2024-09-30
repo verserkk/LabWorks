@@ -7,17 +7,17 @@
 #include <memory>
 
 
-void handleAddLibrary(Catalog& catalog);
-void handleAddBook(const Catalog& catalog);
-void handleFindBook(const Catalog& catalog);
-void handleDeleteBookFromAllLibraries(const Catalog& catalog);
-void handlePrintAllLibraries(const Catalog& catalog);
-void handleLibraryDetails(const Catalog& catalog);
-void handleDeleteLibrary(Catalog& catalog);
-void handleFindBooksInLibrary(const Catalog& catalog);
-void handleDeleteBookFromLibrary(const Catalog& catalog);
-void handleSortByCost(const Catalog& catalog);
-void handleSortByNumberOfPages(const Catalog& catalog);
+void AddLibrary(Catalog& catalog);
+void AddBook(const Catalog& catalog);
+void FindBook(const Catalog& catalog);
+void DeleteBookFromAllLibraries(const Catalog& catalog);
+void PrintAllLibraries(const Catalog& catalog);
+void LibraryDetails(const Catalog& catalog);
+void DeleteLibrary(Catalog& catalog);
+void FindBooksInLibrary(const Catalog& catalog);
+void DeleteBookFromLibrary(const Catalog& catalog);
+void SortByCost(const Catalog& catalog);
+void SortByNumberOfPages(const Catalog& catalog);
 void displayMenu();
 
 #endif 
