@@ -11,12 +11,12 @@
 class Library
 {
 private:
-    std::string Name;
-    std::vector<std::shared_ptr<PrintedProduct>> Books;
+    std::string name;
+    std::vector<std::shared_ptr<PrintedProduct>> books;
     int numberOfBooks = 0;
 
 public:
-    void addBook(std::shared_ptr<PrintedProduct> Book);
+    void addBook(std::shared_ptr<PrintedProduct> book);
     int getNumberOfBooks() const;
     void takeBook(int i);
     void sortBooksByCost();

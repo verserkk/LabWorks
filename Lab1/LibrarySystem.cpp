@@ -1,133 +1,131 @@
 
 #include "LibrarySystem.h"
 
-using namespace std;
+void addLibrary(Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name: ";
+    std::string name;
+    getline(std::cin, name);
 
-void AddLibrary(Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name: ";
-    string name;
-    getline(cin, name);
-
-    auto library = make_shared<Library>();
+    auto library = std::make_shared<Library>();
     library->setName(name);
     catalog.addLibrary(library);
-    cout << "Library \"" << name << "\" added." << endl;
+    std::cout << "Library \"" << name << "\" added." << std::endl;
 }
 
-void AddBook(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name: ";
-    string libName;
-    getline(cin, libName);
+void addBook(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name: ";
+    std::string libName;
+    getline(std::cin, libName);
 
     if (auto library = catalog.findLibraryByName(libName); library) {
-        cout << "Enter book details:" << endl;
-        auto book = make_shared<PrintedProduct>(0, 0, "", "");
+        std::cout << "Enter book details:" << std::endl;
+        auto book = std::make_shared<PrintedProduct>(0,0,"","");
         book->createBook();
         library->addBook(book);
-        cout << "Book added to library \"" << libName << "\"." << endl;
+        std::cout << "Book added to library \"" << libName << "\"." << std::endl;
     }
     else {
-        cout << "Library not found." << endl;
+        std::cout << "Library not found." << std::endl;
     }
 }
 
-void FindBook(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter book title to find: ";
-    string bookTitle;
-    getline(cin, bookTitle);
+void findBook(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter book title to find: ";
+    std::string bookTitle;
+    getline(std::cin, bookTitle);
     catalog.findBookByName(bookTitle);
 }
 
-void DeleteBookFromAllLibraries(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter book title to delete: ";
-    string bookTitle;
-    getline(cin, bookTitle);
+void deleteBookFromAllLibraries(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter book title to delete: ";
+    std::string bookTitle;
+    getline(std::cin, bookTitle);
     catalog.deleteBookFromAllLibraries(bookTitle);
-    cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from all libraries." << endl;
+    std::cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from all libraries." << std::endl;
 }
 
-void PrintAllLibraries(const Catalog& catalog) {
+void printAllLibraries(const Catalog& catalog) {
     catalog.printAllLibrarys();
 }
 
-void LibraryDetails(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name to view details: ";
-    string libName;
-    getline(cin, libName);
+void libraryDetails(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name to view details: ";
+    std::string libName;
+    getline(std::cin, libName);
     catalog.printFullLibraryInfo(libName);
 }
 
-void DeleteLibrary(Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name to delete: ";
-    string libName;
-    getline(cin, libName);
+void deleteLibrary(Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name to delete: ";
+    std::string libName;
+    getline(std::cin, libName);
     catalog.deleteLibraryByName(libName);
-    cout << "Library \"" << libName << "\" has been deleted." << endl;
+    std::cout << "Library \"" << libName << "\" has been deleted." << std::endl;
 }
 
-void FindBooksInLibrary(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name: ";
-    string libName;
-    getline(cin, libName);
+void findBooksInLibrary(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name: ";
+    std::string libName;
+    getline(std::cin, libName);
 
     if (auto library = catalog.findLibraryByName(libName); library) {
-        cout << "Enter book title to find: ";
-        string bookTitle;
-        getline(cin, bookTitle);
+        std::cout << "Enter book title to find: ";
+        std::string bookTitle;
+        getline(std::cin, bookTitle);
         auto books = library->findBooksByTitle(bookTitle);
         if (!books.empty()) {
-            cout << "Books in library \"" << libName << "\":" << endl;
+            std::cout << "Books in library \"" << libName << "\":" << std::endl;
             for (const auto& book : books) {
                 book->print();
             }
         }
         else {
-            cout << "No books with title \"" << bookTitle << "\" found in library \"" << libName << "\"." << endl;
+            std::cout << "No books with title \"" << bookTitle << "\" found in library \"" << libName << "\"." << std::endl;
         }
     }
     else {
-        cout << "Library not found." << endl;
+        std::cout << "Library not found." << std::endl;
     }
 }
 
-void DeleteBookFromLibrary(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name: ";
-    string libName;
-    getline(cin, libName);
+void deleteBookFromLibrary(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name: ";
+    std::string libName;
+    getline(std::cin, libName);
 
     if (auto library = catalog.findLibraryByName(libName); library) {
-        cout << "Enter book title to delete: ";
-        string bookTitle;
-        getline(cin, bookTitle);
+        std::cout << "Enter book title to delete: ";
+        std::string bookTitle;
+        getline(std::cin, bookTitle);
         library->deleteBookByTitle(bookTitle);
-        cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from library \"" << libName << "\"." << endl;
+        std::cout << "Book(s) with title \"" << bookTitle << "\" have been deleted from library \"" << libName << "\"." << std::endl;
     }
     else {
-        cout << "Library not found." << endl;
+        std::cout << "Library not found." << std::endl;
     }
 }
 
-void SortByCost(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name to sort books by cost: ";
-    string libName;
-    getline(cin, libName);
+void sortByCost(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name to sort books by cost: ";
+    std::string libName;
+    getline(std::cin, libName);
     catalog.sortBooksInLibraryByCost(libName);
 }
 
-void SortByNumberOfPages(const Catalog& catalog) {
-    cin.ignore();
-    cout << "Enter library name to sort books by number of pages: ";
-    string libName;
-    getline(cin, libName);
+void sortByNumberOfPages(const Catalog& catalog) {
+    std::cin.ignore();
+    std::cout << "Enter library name to sort books by number of pages: ";
+    std::string libName;
+    std::getline(std::cin, libName);
     catalog.sortBooksInLibraryByNumberOfPages(libName);
 }
 

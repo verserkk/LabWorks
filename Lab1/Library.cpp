@@ -1,11 +1,11 @@
 #include "Library.h"
 
 
-using namespace std;
 
-void Library::addBook(std::shared_ptr<PrintedProduct> Book)
+
+void Library::addBook(std::shared_ptr<PrintedProduct> book)
 {
-    Books.push_back(Book);
+    books.push_back(book);
     numberOfBooks++;
 }
 
@@ -13,45 +13,45 @@ int Library::getNumberOfBooks() const { return numberOfBooks; }
 
 void Library::takeBook(int i)
 {
-    if (Books[i]->getAvailability())
+    if (books[i]->getAvailability())
     {
-        Books[i]->setAvailability(false);
-        cout << "You've just taken a book! Congrats!" << endl;
+        books[i]->setAvailability(false);
+        std::cout << "You've just taken a book! Congrats!" << std::endl;
     }
     else
     {
-        cout << "Sorry!! But the book is already taken :(" << endl;
+        std::cout << "Sorry!! But the book is already taken :(" << std::endl;
     }
 }
 
 void Library::sortBooksByCost()
 {
-    ranges::sort(Books, [](const shared_ptr<PrintedProduct>& a, const shared_ptr<PrintedProduct>& b) {
+    std::ranges::sort(books, [](const std::shared_ptr<PrintedProduct>&a, const std::shared_ptr<PrintedProduct>& b) {
         return a->getCost() > b->getCost();
         });
 }
 
 void Library::sortBooksByNumberOfPages()
 {
-    ranges::sort(Books, [](const shared_ptr<PrintedProduct>& a, const shared_ptr<PrintedProduct>& b) {
+    std::ranges::sort(books, [](const std::shared_ptr<PrintedProduct>& a, const std::shared_ptr<PrintedProduct>& b) {
         return a->getNumberOfPages() > b->getNumberOfPages();
         });
 }
 
 void Library::deleteBookByTitle(std::string_view title)
 {
-    auto newEnd = std::ranges::remove_if(Books, [&](const shared_ptr<PrintedProduct>& book) {
+    auto newEnd = std::ranges::remove_if(books, [&](const std::shared_ptr<PrintedProduct>& book) {
         return book->getTitle() == title;
         });
 
-    Books.erase(newEnd.begin(), Books.end());
-    numberOfBooks = Books.size();
+    books.erase(newEnd.begin(), books.end());
+    numberOfBooks = books.size();
 }
 
 std::vector<std::shared_ptr<PrintedProduct>> Library::findBooksByTitle(std::string_view title) const
 {
     std::vector<std::shared_ptr<PrintedProduct>> result;
-    for (const auto& book : Books)
+    for (const auto& book : books)
     {
         if (book->getTitle() == title)
         {
@@ -65,17 +65,17 @@ void Library::printAllBooks() const
 {
     for (int i = 0; i < numberOfBooks; i++)
     {
-        cout << i << ":" << endl;
-        Books[i]->print();
+        std::cout << i << ":" << std::endl;
+        books[i]->print();
     }
 }
 
-std::string Library::getName() const { return Name; }
+std::string Library::getName() const { return name; }
 
-void Library::setName(std::string_view name) { Name = name; }
+void Library::setName(std::string_view nameIn) { name = nameIn; }
 
 void Library::printLibInfo() const
 {
-    cout << Name << endl
-        << "Contains " << numberOfBooks << " books" << endl;
+    std::cout << name << std::endl
+        << "Contains " << numberOfBooks << " books" << std::endl;
 }

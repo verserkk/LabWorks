@@ -5,7 +5,6 @@
 
 
 
-using namespace std;
 
 
 int main() {
@@ -14,23 +13,35 @@ int main() {
 
     while (true) {
         displayMenu();
-        cin >> choice;
+        std::cin >> choice;
 
         if (choice == 0) return 0;
 
         switch (choice) {
-        case 1: AddLibrary(catalog); break;
-        case 2: AddBook(catalog); break;
-        case 3: FindBook(catalog); break;
-        case 4: DeleteBookFromAllLibraries(catalog); break;
-        case 5: PrintAllLibraries(catalog); break;
-        case 6: LibraryDetails(catalog); break;
-        case 7: DeleteLibrary(catalog); break;
-        case 8: FindBooksInLibrary(catalog); break;
-        case 9: DeleteBookFromLibrary(catalog); break;
-        case 10: SortByCost(catalog); break;
-        case 11: SortByNumberOfPages(catalog); break;
-        default: cout << "Invalid choice. Please enter a number between 0 and 9." << endl; break;
+        case 1: addLibrary(catalog); 
+            break;
+        case 2: addBook(catalog); 
+            break;
+        case 3: findBook(catalog); 
+            break;
+        case 4: deleteBookFromAllLibraries(catalog);
+            break;
+        case 5: printAllLibraries(catalog);
+            break;
+        case 6: libraryDetails(catalog);
+            break;
+        case 7: deleteLibrary(catalog);
+            break;
+        case 8: findBooksInLibrary(catalog);
+            break;
+        case 9: deleteBookFromLibrary(catalog);
+            break;
+        case 10: sortByCost(catalog);
+            break;
+        case 11: sortByNumberOfPages(catalog);
+            break;
+        default: std::cout << "Invalid choice. Please enter a number between 0 and 9." << std::endl;
+            break;
         }
     }
 }

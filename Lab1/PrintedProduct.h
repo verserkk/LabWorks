@@ -15,8 +15,8 @@ private:
     bool availability = true;
 
 public:
+    
     PrintedProduct(int costIn, int numberOfPagesIn, std::string_view titleIn, std::string_view nameOfAuthorIn);
-
     void setNumberOfPages(int numberOfPagesIn);
     void setCost(int costIn);
     void setTitle(std::string_view titleIn);

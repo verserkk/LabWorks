@@ -13,10 +13,10 @@ class Catalog
 {
 private:
     int numOfLibrarys = 0;
-    std::vector<std::shared_ptr<Library>> Librarys;
+    std::vector<std::shared_ptr<Library>> librarys;
 
 public:
-    void addLibrary(std::shared_ptr<Library> Lib);
+    void addLibrary(std::shared_ptr<Library> lib);
     int getNumOfLibrarys() const;
     std::shared_ptr<Library> findLibraryByName(std::string_view name) const;
     void deleteLibraryByName(std::string_view name);
