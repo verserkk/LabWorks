@@ -8,7 +8,11 @@
 
 
 int main() {
-    Catalog catalog;
+    setlocale(LC_ALL,"ru_RU.UTF-8");
+    Catalog catalog("host=localhost port=5432 dbname=postgres user=postgres password=123321");
+    pqxx::connection C("host=localhost port=5432 dbname=postgres user=postgres password=123321");
+    prepareStatements(C);
+    
     int choice;
 
     while (true) {

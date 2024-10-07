@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iostream>
 #include "Library.h"
+#include <pqxx/pqxx>
 
 class Catalog
 {
@@ -16,6 +17,10 @@ private:
     std::vector<std::shared_ptr<Library>> librarys;
 
 public:
+    Catalog(const std::string& connectionString);
+    ~Catalog();
+    void saveToDatabase(const std::string& connectionString);
+    void loadFromDatabase(const std::string& connectionString);
     void addLibrary(std::shared_ptr<Library> lib);
     int getNumOfLibrarys() const;
     std::shared_ptr<Library> findLibraryByName(std::string_view name) const;

@@ -5,8 +5,9 @@
 #include "Library.h"
 #include "PrintedProduct.h"
 #include <memory>
+#include <pqxx/pqxx>
 
-
+void prepareStatements(pqxx::connection& C);
 void addLibrary(Catalog& catalog);
 void addBook(const Catalog& catalog);
 void findBook(const Catalog& catalog);

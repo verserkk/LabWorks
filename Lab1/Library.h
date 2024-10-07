@@ -20,6 +20,7 @@ public:
     int getNumberOfBooks() const;
     void takeBook(int i);
     void sortBooksByCost();
+    std::vector<std::shared_ptr<PrintedProduct>> getBooks() const;
     void sortBooksByNumberOfPages();
     void deleteBookByTitle(std::string_view title);
     std::vector<std::shared_ptr<PrintedProduct>> findBooksByTitle(std::string_view title) const;

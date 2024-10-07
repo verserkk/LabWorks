@@ -69,6 +69,9 @@ void Library::printAllBooks() const
         books[i]->print();
     }
 }
+std::vector<std::shared_ptr<PrintedProduct>> Library::getBooks() const {
+    return books;
+}
 
 std::string Library::getName() const { return name; }
 

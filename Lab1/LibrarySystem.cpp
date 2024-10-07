@@ -12,7 +12,18 @@ void addLibrary(Catalog& catalog) {
     catalog.addLibrary(library);
     std::cout << "Library \"" << name << "\" added." << std::endl;
 }
-
+void prepareStatements(pqxx::connection& C) {
+    C.prepare("insert_library",
+        "INSERT INTO libraries (name) VALUES ($1) "
+        "ON CONFLICT (name) DO UPDATE SET name = EXCLUDED.name");
+    C.prepare("insert_book",
+        "INSERT INTO books (title, author, cost, number_of_pages, library_id) "
+        "VALUES ($1, $2, $3, $4, (SELECT id FROM libraries WHERE name = $5)) "
+        "ON CONFLICT (title) DO UPDATE SET author = EXCLUDED.author, "
+        "cost = EXCLUDED.cost, number_of_pages = EXCLUDED.number_of_pages");
+    C.prepare("select_books_by_library",
+        "SELECT title, author, cost, number_of_pages FROM books WHERE library_id = (SELECT id FROM libraries WHERE name = $1)");
+}
 void addBook(const Catalog& catalog) {
     std::cin.ignore();
     std::cout << "Enter library name: ";
