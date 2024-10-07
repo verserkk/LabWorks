@@ -8,6 +8,10 @@
 #include <ranges>
 #include "PrintedProduct.h"
 
+
+
+
+
 class Library
 {
 private:
@@ -28,6 +32,8 @@ public:
     std::string getName() const;
     void setName(std::string_view name);
     void printLibInfo() const;
+
+    friend void printLibraryInfo(const Library& library);
 };
 
 #endif

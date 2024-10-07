@@ -27,7 +27,7 @@ void Library::takeBook(int i)
 void Library::sortBooksByCost()
 {
     std::ranges::sort(books, [](const std::shared_ptr<PrintedProduct>&a, const std::shared_ptr<PrintedProduct>& b) {
-        return a->getCost() > b->getCost();
+        return a > b;
         });
 }
 

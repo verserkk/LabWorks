@@ -7,6 +7,10 @@
 #include <memory>
 #include <pqxx/pqxx>
 
+
+void printLibraryInfo(const Library& library);
+
+
 void prepareStatements(pqxx::connection& C);
 void addLibrary(Catalog& catalog);
 void addBook(const Catalog& catalog);

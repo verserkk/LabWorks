@@ -158,3 +158,8 @@ void displayMenu()
         << "0. Exit\n";
     std::cout << "Enter your choice: ";
 }
+
+void printLibraryInfo(const Library& library) {
+    std::cout << "Library Name: " << library.name << std::endl;
+    std::cout << "Number of Books: " << library.numberOfBooks << std::endl;
+}

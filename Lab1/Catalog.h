@@ -32,6 +32,7 @@ public:
     void deleteBookFromLibrary(const std::string& libName, const std::string& bookTitle) const;
     void sortBooksInLibraryByCost(const std::string& name) const;
     void sortBooksInLibraryByNumberOfPages(const std::string& name) const;
+   
 };
 
 #endif 

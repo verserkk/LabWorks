@@ -52,6 +52,16 @@ void PrintedProduct::print() const
         std::cout << "Not available" << std::endl;
     }
 }
+bool PrintedProduct::operator ==(PrintedProduct& book) const
+{
+    return this->title == book.title;
+}
+bool PrintedProduct::operator >(PrintedProduct& book) const {
+    return this->cost > book.cost;
+}
+bool PrintedProduct::operator <(PrintedProduct& book) const {
+    return this->numberOfPages < book.numberOfPages;
+}
 
 void PrintedProduct::createBook()
 {
