@@ -56,13 +56,6 @@ bool PrintedProduct::operator ==(const PrintedProduct& book) const
 {
     return this->title == book.title;
 }
-auto PrintedProduct::operator <=>(const PrintedProduct& book) const {
-    if (auto cmp = cost <=> book.cost; cmp != 0) return cmp;
-    if (auto cmp = numberOfPages <=> book.numberOfPages; cmp != 0) return cmp;
-    if (auto cmp = title <=> book.title; cmp != 0) return cmp;
-    if (auto cmp = nameOfAuthor <=> book.nameOfAuthor; cmp != 0) return cmp;
-    return availability <=> book.availability;
-}
 
 
 

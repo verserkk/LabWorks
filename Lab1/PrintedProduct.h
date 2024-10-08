@@ -29,7 +29,7 @@ public:
     std::string getNameOfAuthor() const;
     bool getAvailability() const;
     bool operator ==(const PrintedProduct& book) const;
-    auto operator <=>(const PrintedProduct& book) const;
+    auto operator <=>(const PrintedProduct& book) const = default;
     void print() const;
     void createBook();
 };
