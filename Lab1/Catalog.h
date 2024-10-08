@@ -15,12 +15,12 @@ class Catalog
 private:
     int numOfLibrarys = 0;
     std::vector<std::shared_ptr<Library>> librarys;
-
-public:
-    Catalog(const std::string& connectionString);
-    ~Catalog();
     void saveToDatabase(const std::string& connectionString);
     void loadFromDatabase(const std::string& connectionString);
+
+public:
+    explicit Catalog(const std::string& connectionString);
+    ~Catalog();
     void addLibrary(std::shared_ptr<Library> lib);
     int getNumOfLibrarys() const;
     std::shared_ptr<Library> findLibraryByName(std::string_view name) const;

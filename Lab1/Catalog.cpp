@@ -44,7 +44,7 @@ void Catalog::saveToDatabase(const std::string& connectionString) {
         }
         W.commit();
     }
-    catch (const std::exception& e) {
+    catch (const std::system_error& e) {
         std::cerr << "Error saving libraries and books: " << e.what() << std::endl;
     }
 
@@ -74,7 +74,8 @@ void Catalog::loadFromDatabase(const std::string& connectionString) {
         }
         W.commit();
     }
-    catch (const std::exception& e) {
+
+    catch (const std::system_error& e) {
         std::cerr << "Error loading libraries: " << e.what() << std::endl;
     }
 }

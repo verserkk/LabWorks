@@ -28,9 +28,8 @@ public:
     std::string getTitle() const;
     std::string getNameOfAuthor() const;
     bool getAvailability() const;
-    bool operator ==(PrintedProduct& book) const;
-    bool operator >(PrintedProduct& book) const;
-    bool operator <(PrintedProduct& book) const;
+    bool operator ==(const PrintedProduct& book) const;
+    auto operator <=>(const PrintedProduct& book) const;
     void print() const;
     void createBook();
 };
