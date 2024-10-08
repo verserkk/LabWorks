@@ -5,6 +5,8 @@
 #include <string>
 #include <string_view>
 
+class Library;
+
 class PrintedProduct
 {
 private:
@@ -28,10 +30,11 @@ public:
     std::string getTitle() const;
     std::string getNameOfAuthor() const;
     bool getAvailability() const;
-    bool operator ==(const PrintedProduct& book) const;
+    bool operator ==(std::string_view title) const;
     auto operator <=>(const PrintedProduct& book) const = default;
     void print() const;
     void createBook();
+
 };
 
 #endif 

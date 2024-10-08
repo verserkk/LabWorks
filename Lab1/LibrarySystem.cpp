@@ -9,7 +9,7 @@ void addLibrary(Catalog& catalog) {
 
     auto library = std::make_shared<Library>();
     library->setName(name);
-    catalog.addLibrary(library);
+    catalog+=library;
     std::cout << "Library \"" << name << "\" added." << std::endl;
 }
 void prepareStatements(pqxx::connection& C) {
@@ -34,7 +34,7 @@ void addBook(const Catalog& catalog) {
         std::cout << "Enter book details:" << std::endl;
         auto book = std::make_shared<PrintedProduct>(0,0,"","");
         book->createBook();
-        library->addBook(book);
+        *library+= book;
         std::cout << "Book added to library \"" << libName << "\"." << std::endl;
     }
     else {

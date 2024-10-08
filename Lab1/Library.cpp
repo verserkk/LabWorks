@@ -41,15 +41,20 @@ void Library::sortBooksByNumberOfPages()
 void Library::deleteBookByTitle(std::string_view title)
 {
     auto newEnd = std::ranges::remove_if(books, [&](const std::shared_ptr<PrintedProduct>& book) {
-        return book->getTitle() == title;
+        return *book == title;
         });
 
     books.erase(newEnd.begin(), books.end());
     numberOfBooks = books.size();
 }
+void Library::operator +=(std::shared_ptr<PrintedProduct> book) {
+    this->addBook(book);
+}
 
 std::vector<std::shared_ptr<PrintedProduct>> Library::findBooksByTitle(std::string_view title) const
 {
+    PrintedProduct a(0,0,"","");
+
     std::vector<std::shared_ptr<PrintedProduct>> result;
     for (const auto& book : books)
     {

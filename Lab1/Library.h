@@ -6,8 +6,8 @@
 #include <string>
 #include <algorithm>
 #include <ranges>
+#include <pqxx/pqxx>
 #include "PrintedProduct.h"
-
 
 
 
@@ -22,7 +22,7 @@ private:
 public:
     void addBook(std::shared_ptr<PrintedProduct> book);
     int getNumberOfBooks() const;
-    void takeBook(int i);
+
     void sortBooksByCost();
     std::vector<std::shared_ptr<PrintedProduct>> getBooks() const;
     void sortBooksByNumberOfPages();
@@ -32,8 +32,10 @@ public:
     std::string getName() const;
     void setName(std::string_view name);
     void printLibInfo() const;
-
+    void operator +=(std::shared_ptr<PrintedProduct> book);
+    void takeBook(int i);
     friend void printLibraryInfo(const Library& library);
+ 
 };
 
 #endif

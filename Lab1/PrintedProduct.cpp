@@ -52,9 +52,9 @@ void PrintedProduct::print() const
         std::cout << "Not available" << std::endl;
     }
 }
-bool PrintedProduct::operator ==(const PrintedProduct& book) const
+bool PrintedProduct::operator ==(std::string_view title) const
 {
-    return this->title == book.title;
+    return this->title == title;
 }
 
 

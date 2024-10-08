@@ -28,18 +28,21 @@ void Catalog::saveToDatabase(const std::string& connectionString) {
         pqxx::work W(C);
         prepareStatements(C);
 
+        
+        W.exec("DELETE FROM books");
+        W.exec("DELETE FROM libraries");
+
+  
         for (const auto& library : librarys) {
-           
             W.exec_prepared("insert_library", library->getName());
 
-      
             for (const auto& book : library->getBooks()) {
                 W.exec_prepared("insert_book",
                     book->getTitle(),
                     book->getNameOfAuthor(),
                     book->getCost(),
                     book->getNumberOfPages(),
-                    library->getName()); 
+                    library->getName());
             }
         }
         W.commit();
@@ -84,6 +87,9 @@ Catalog::Catalog(const std::string& connectionString) {
 }
 Catalog::~Catalog() {
     saveToDatabase("host = localhost port = 5432 dbname = postgres user = postgres password = 123321");
+}
+void Catalog::operator +=(std::shared_ptr<Library> lib) {
+    this->addLibrary(lib);
 }
 void Catalog::deleteLibraryByName(std::string_view name)
 {
