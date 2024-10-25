@@ -12,8 +12,8 @@ int main() {
     pqxx::connection C("host=localhost port=5432 dbname=postgres user=postgres password=123321");
     Catalog catalog("host=localhost port=5432 dbname=postgres user=postgres password=123321");
    
-    
-    
+    void* a;
+    int* l; 
     int choice;
 
     while (true) {
@@ -45,7 +45,7 @@ int main() {
             break;
         case 11: sortByNumberOfPages(catalog);
             break;
-        default: std::cout << "Invalid choice. Please enter a number between 0 and 9." << std::endl;
+        default: std::cout << "Invalid choice. Please enter a number between 0 and 11." << std::endl;
             break;
         }
     }
